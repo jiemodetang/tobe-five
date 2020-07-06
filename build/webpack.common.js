@@ -23,8 +23,9 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, '../dist'),
-    filename: '[name].[chunk:8].js',
+    filename: '[name].[hash].js',
     // publicPath: "/",
+    //chunkFilename 指未列在 entry 中，却又需要被打包出来的文件的名称。
     chunkFilename: 'chunk/[name].[chunkhash:8].js',
   },
   module: {
@@ -110,10 +111,4 @@ module.exports = {
       '@pages': `${srcDir}/pages`,
     },
   },
-  // 优化方案
-  // optimization: {
-  //   removeAvailableModules: true, // 删除已解决的chunk (默认 true)
-  //   removeEmptyChunks: true, // 删除空的chunks (默认 true)
-  //   mergeDuplicateChunks: true // 合并重复的chunk (默认 true)
-  // }
 };

@@ -1,10 +1,18 @@
 {
   "presets": [
-    "@babel/preset-env",
-    "@babel/preset-react"
+    ["@babel/preset-env",{
+      "targets": {
+          "chrome": "58",
+          "ie": "10"
+      },
+      "useBuiltIns": "usage" //这样配置之后就不用在文件中导入import "@babel/polyfill";
+  }] ,
+  "@babel/react"
   ],
   "plugins": [
-    "@babel/transform-runtime",
+    ["@babel/plugin-transform-runtime", {
+      "corejs": 3,
+      }],
     [
       "@babel/plugin-proposal-decorators",
       {

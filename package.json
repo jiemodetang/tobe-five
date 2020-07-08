@@ -62,5 +62,12 @@
     "react-dom": "^16.12.0",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2"
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10",
+    "Android >= 4.0",
+    "iOS >= 8"
+  ]
 }
